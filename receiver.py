@@ -28,9 +28,7 @@ for i in mail_ids:
     for response_part in data:
         # so if its a tuple...
         if isinstance(response_part, tuple):
-            # we go for the content at its second element
-            # skipping the header at the first and the closing
-            # at the third
+            # use SECOND element (header is first and closing is last)
             message = email.message_from_bytes(response_part[1])
 
             mail_from = message['from']
@@ -48,7 +46,6 @@ for i in mail_ids:
                 # if the message isn't multipart, just extract it
                 mail_content = message.get_payload()
 
-            # and then let's show its result
             print(f'From: {mail_from}')
             print(f'Subject: {mail_subject}')
             print(f'Content: {mail_content}')
