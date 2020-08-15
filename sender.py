@@ -32,6 +32,8 @@ html = """\
   </body>
 </html>
 """
+
+# plain text can also be sent with "text" instead of "html"
 msg.attach(MIMEText(html, 'html'))
 
 # email attachment
