@@ -39,7 +39,7 @@ Content: <html>
 ### Implementation Notes
 ```imaplib.error: command SEARCH illegal in state AUTH, only allowed in states SELECTED``` will be thrown if an inbox is not selected. ```server.select("INBOX")``` will suffice.
 
-Payloads with multiple parts is handled with the following code:
+Payloads with multiple parts are handled with the following code:
 ```python
 if message.is_multipart():
    mail_content = ''
